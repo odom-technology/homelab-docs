@@ -10,8 +10,10 @@ nav:
       - Overview: getting-started/index.md
       - Planning: getting-started/planning.md
       - Prerequisites: getting-started/prerequisites.md
+  - Build plan: build-plan/index.md
   - Architecture:
       - Overview: architecture/index.md
+      - Reference design: architecture/reference-design.md
       - Physical: architecture/physical.md
       - Logical: architecture/logical.md
       - Availability: architecture/availability.md
@@ -25,8 +27,10 @@ nav:
       - Overview: proxmox/index.md
       - Installation: proxmox/installation.md
       - Cluster: proxmox/cluster.md
+      - Storage: proxmox/storage.md
   - Network:
       - Overview: network/index.md
+      - Router-preserving design: network/router-preserving-design.md
       - DNS: network/dns.md
       - Tailscale: network/tailscale.md
   - Services:
@@ -38,12 +42,16 @@ nav:
       - Overview: security/index.md
       - Threat model: security/threat-model.md
       - Secrets: security/secrets.md
+      - Publication checklist: security/publication-checklist.md
   - Operations:
       - Overview: operations/index.md
       - Maintenance: operations/maintenance.md
       - Monitoring: operations/monitoring.md
+      - Checklists: operations/checklists.md
   - Backups: backups/index.md
-  - Disaster recovery: disaster-recovery/index.md
+  - Disaster recovery:
+      - Overview: disaster-recovery/index.md
+      - DNS fallback: disaster-recovery/dns-fallback.md
   - Contributing:
       - Overview: contributing/index.md
       - Sanitization: contributing/sanitization.md

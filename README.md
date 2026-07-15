@@ -23,3 +23,11 @@ identifiers, camera locations, or private policy.
 - `contributing/` — writing, sanitization, diagrams, and validation.
 
 See `LICENSE.md` for the split license covering written guidance and source code.
+
+## Reference design
+
+The first documented reference system uses three small Proxmox nodes, local SSDs, an
+existing consumer router, a managed access switch, redundant AdGuard guests, private
+remote access, and outbound-only public ingress. Begin with the
+[reference design](docs/architecture/reference-design.md) and
+[staged build plan](docs/build-plan/index.md).
