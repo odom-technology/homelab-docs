@@ -1,0 +1,50 @@
+site_name: ODOM Homelab Docs
+site_description: Sanitized guides for building and operating a small Proxmox homelab
+repo_url: https://github.com/odom-technology/homelab-docs
+docs_dir: docs
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Getting started:
+      - Overview: getting-started/index.md
+      - Planning: getting-started/planning.md
+      - Prerequisites: getting-started/prerequisites.md
+  - Architecture:
+      - Overview: architecture/index.md
+      - Physical: architecture/physical.md
+      - Logical: architecture/logical.md
+      - Availability: architecture/availability.md
+  - Hardware:
+      - Overview: hardware/index.md
+      - Rack: hardware/rack.md
+      - Nodes: hardware/nodes.md
+      - Networking: hardware/networking.md
+      - Power and cooling: hardware/power-cooling.md
+  - Proxmox:
+      - Overview: proxmox/index.md
+      - Installation: proxmox/installation.md
+      - Cluster: proxmox/cluster.md
+  - Network:
+      - Overview: network/index.md
+      - DNS: network/dns.md
+      - Tailscale: network/tailscale.md
+  - Services:
+      - Overview: services/index.md
+      - AdGuard Home: services/adguard-home.md
+      - Home Assistant: services/home-assistant.md
+      - Frigate: services/frigate.md
+  - Security:
+      - Overview: security/index.md
+      - Threat model: security/threat-model.md
+      - Secrets: security/secrets.md
+  - Operations:
+      - Overview: operations/index.md
+      - Maintenance: operations/maintenance.md
+      - Monitoring: operations/monitoring.md
+  - Backups: backups/index.md
+  - Disaster recovery: disaster-recovery/index.md
+  - Contributing:
+      - Overview: contributing/index.md
+      - Sanitization: contributing/sanitization.md
+  - Glossary: glossary.md
