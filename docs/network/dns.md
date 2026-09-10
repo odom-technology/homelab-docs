@@ -1,9 +1,9 @@
 # DNS and AdGuard Home
 
-Run two resolvers on different physical nodes and advertise both through router DHCP.
-Handle IPv4 and IPv6 consistently, restrict administration, monitor resolution from a
-client perspective, and document how to return the router to public DNS during a full
-rack outage.
+Run two resolvers on different physical nodes and reach them through two identical,
+narrowly routed failure domains. Keep router DHCP and ordinary client public DNS on
+rack-independent resolvers. Publish the local pair only for a restricted private split
+namespace after UDP/TCP, rewrite, filtering, and failover tests pass.
 
 ## Independent resolvers
 
@@ -18,8 +18,12 @@ Do not make the second instance depend on the first for startup.
 - Resolver administration is not exposed to untrusted LAN or Internet clients.
 - Query-log retention and backup treatment are intentional.
 - IPv4 and IPv6 clients cannot silently bypass the intended policy.
-- Router DHCP advertises both local addresses only after validation.
+- Both exact-route advertisers reach both local resolvers without exposing a whole
+  server or management network.
+- Private split DNS publishes both local addresses only after validation.
 - An end-user lookup test detects failure beyond process-level health.
+- With the entire rack off, public names still resolve and only the private namespace is
+  unavailable.
 
-Avoid advertising a public resolver as a permanent secondary when consistent filtering
-is required: clients may use it while the local resolvers are healthy.
+Remote ad filtering is a separate design decision. Do not turn a private split-DNS
+deployment into a global DNS dependency without repeating full-rack failure analysis.

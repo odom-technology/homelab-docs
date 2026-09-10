@@ -1,5 +1,6 @@
 # Network
 
-The starter design keeps the existing home router as router, Wi-Fi access point, DHCP
-server, and default gateway. The managed switch extends the same LAN to the servers.
-Service isolation initially comes from guests and firewalls rather than VLAN routing.
+The reference design keeps the modem, gateway, primary switch, and Wi-Fi access point
+independent of rack compute. Managed VLANs separate management, servers, public origins,
+IoT, sensors/cameras, and guests while retaining a trusted household network. Default
+inter-zone policy is deny with narrow, documented exceptions.

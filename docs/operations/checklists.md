@@ -19,7 +19,8 @@
 
 - Restore a complete noncritical guest into an isolated location.
 - Exercise single-node maintenance and verify cluster quorum.
-- Test one-DNS failure and the full-rack DNS fallback documentation.
+- Test one-DNS and one-route-router failure, then confirm a full-rack outage removes only
+  private split DNS while public DNS remains client-native.
 - Review service resource allocations and storage-retention limits.
 - Reconcile private inventory with physical labels.
 - Review threat models and accepted risks.

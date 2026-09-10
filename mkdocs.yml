@@ -30,7 +30,7 @@ nav:
       - Storage: proxmox/storage.md
   - Network:
       - Overview: network/index.md
-      - Router-preserving design: network/router-preserving-design.md
+      - Rack-independent network core: network/router-preserving-design.md
       - DNS: network/dns.md
       - Tailscale: network/tailscale.md
   - Services:
@@ -51,7 +51,7 @@ nav:
   - Backups: backups/index.md
   - Disaster recovery:
       - Overview: disaster-recovery/index.md
-      - DNS fallback: disaster-recovery/dns-fallback.md
+      - Rack-outage DNS behavior: disaster-recovery/dns-fallback.md
   - Contributing:
       - Overview: contributing/index.md
       - Sanitization: contributing/sanitization.md

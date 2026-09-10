@@ -1,26 +1,28 @@
-# DNS fallback during a rack outage
+# DNS behavior during a rack outage
 
-Keeping the router independent preserves the Internet path, but clients configured to
-use cluster-hosted DNS cannot resolve names while every server is off.
+Keep public client DNS independent of cluster-hosted resolvers. A full rack outage may
+remove the private split namespace, filtering, and internal applications, but it should
+not require a router change to restore ordinary Internet name resolution.
 
 ## Preparation
 
 - Store router credentials independently of the rack.
-- Record the normal local DNS addresses privately.
-- Choose trusted temporary public resolvers before an outage.
-- Know how clients receive a renewed DHCP lease.
-- Keep a printed or offline copy of the router DNS procedure.
+- Record the private resolver addresses and split namespace privately.
+- Record the router's rack-independent public DNS baseline.
+- Test both resolver and route-router failure domains.
+- Keep an offline recovery copy of the DNS and overlay-policy procedure.
 
 ## Outage procedure
 
-1. Verify the router and ISP path are healthy and both local resolvers are unavailable.
-2. Record the current router DHCP DNS configuration.
-3. Temporarily select public/automatic DNS.
-4. Renew one test client's network configuration.
-5. Verify resolution and record that filtering is bypassed.
+1. Verify the gateway and ISP path are healthy and both local resolvers are unavailable.
+2. Confirm a client still uses its normal public resolver and resolves public names.
+3. Confirm the private split namespace fails closed rather than leaking to public DNS.
+4. Verify no stale global nameserver or broad route remains in the private-overlay policy.
+5. Record the outage impact without weakening management or inter-VLAN policy.
 
 ## Restoration
 
-Restore and test both local resolvers directly, return their addresses to router DHCP,
-renew a test client, verify filtering, and record the incident. Do not restore local DNS
-merely because a guest process started; verify real queries.
+Restore and test both local resolvers directly, then test each exact-route advertiser
+and single-failure case. Republish the restricted split namespace only after the pair
+passes. Do not restore private DNS merely because a guest process started; verify real
+UDP/TCP queries, rewrites, filtering, and client resolution.
